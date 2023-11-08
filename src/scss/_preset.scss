@@ -1,0 +1,37 @@
+//-----Lengths-----//
+$small-1: 4px;
+$small-2: 8px;
+$small-3: 12px;
+$medium-1: 16px;
+$medium-2: 20px;
+$medium-3: 24px;
+$large-1: 32px;
+$large-2: 48px;
+$large-3: 64px;
+
+//-----Colors-----//
+$primary: #333;
+$secondary: #acacac;
+$tertiary: #E5C100;
+
+
+body {
+  background-color: #fafafa;
+  padding: 0;
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  font-family: 'Open Sans', sans-serif;
+  font-family: 'Raleway', sans-serif;
+}
+
+h1 {
+  font-weight: 500;
+}
+
+p {
+  font-weight: 300;
+}
+
+* {
+    box-sizing: border-box;
+}
