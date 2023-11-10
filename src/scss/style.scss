@@ -46,3 +46,60 @@ header {
     }
   }
 }
+
+main {
+  .line {
+    width: 100%;
+    height: $medium-2;
+    background-color: #333;
+    margin: 0;
+    padding: 0;
+  }
+
+  .welcome {
+
+    img {
+      width: 100%;
+      height: 650px;
+      margin: 0;
+      padding: 0;
+    }
+  }
+
+  .goals {
+    display: flex;
+    justify-content: space-between;
+    height: 700px;
+
+    article {
+      width: 40%;
+      padding: $large-2 $large-3;
+      letter-spacing: 1px;
+      color: $primary;
+
+      h1 {
+        font-size: 60px;
+        font-weight: 800;
+        margin: 0;
+        margin-bottom: $large-2;
+
+        span {
+          color: $tertiary;
+          -webkit-text-stroke-width: 1px;
+          -webkit-text-stroke-color: #333;
+        }
+      }
+
+      p {
+        font-size: $medium-1;
+        line-height: 26px;
+        text-align: justify;
+      }
+    }
+
+    img {
+      width: 60%;
+      object-fit: cover;
+    }
+  }
+}
