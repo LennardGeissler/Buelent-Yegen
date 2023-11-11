@@ -1,5 +1,7 @@
 @import 'preset';
 
+//Menüleiste mit Links zu den jeweiligen Unterseiten
+//Menüleiste ist auf allen Seiten gleich
 header {
   width: 100%;
 
@@ -48,7 +50,9 @@ header {
   }
 }
 
+//Hauptinhalt der jeweiligen Seiten
 main {
+  //Graue Linie zur Trennung der einzelnen Sektionen
   .line {
     width: 100%;
     height: $medium-2;
@@ -57,6 +61,7 @@ main {
     padding: 0;
   }
 
+  //Überschriften für die jeweiligen Sektionen
   h1 {
     font-size: 60px;
     font-weight: 800;
@@ -70,8 +75,10 @@ main {
     }
   }
 
+  //Willkommensnachricht + Hintergrundbild
   .welcome {
 
+    //Hintergrundbild vom Inneren der Kanzlei
     img {
       width: 100%;
       height: 650px;
@@ -80,17 +87,20 @@ main {
     }
   }
 
+  //Einleitender Werbetext sowie Informationen zu den Zielen der Kanzlei und der Bedürfnisbefriedigung der Mandanten
   .goals {
     display: flex;
     justify-content: space-between;
     height: 700px;
 
+    //Gesamter angezeigter Text
     article {
       width: 40%;
       padding: $large-2 $large-3;
       letter-spacing: 1px;
       color: $primary;
 
+      //Hauptteil des Textes
       p {
         font-size: $medium-1;
         line-height: 26px;
@@ -98,19 +108,23 @@ main {
       }
     }
 
+    //Neben dem Text angezeigtes Bild zur Veranschaulichung
     img {
       width: 60%;
       object-fit: cover;
     }
   }
 
+  //Aktuelle News zum Wirtschaftsgeschehen oder zur Kanzlei
   .aktuelles {
     padding: $large-2 120px;
 
+    //Darstellung aller Artikel in der Sektion "Aktuelles" nebeneinander
     .aktuelles-inner {
       display: flex;
       justify-content: space-between;
 
+      //Darstellung des Artikels in einer abgetrennten Box
       article {
         width: 30%;
         height: 600px;
@@ -118,6 +132,7 @@ main {
         position: relative;
         letter-spacing: 1px;
 
+        //Kopfzeile des Artikels
         header {
           width: 100%;
           height: 120px;
@@ -127,11 +142,13 @@ main {
           background-color: #333;
           padding: 20px;
 
+          //Stopwatch-Icon
           img {
             height: 90px;
             margin-right: $large-1;
           }
 
+          //"Der schnelle Blick"
           p {
             font-size: 36px;
             line-height: 44px;
@@ -144,21 +161,25 @@ main {
           }
         }
 
+        //Text des Artikel
         .text {
           padding: $small-2 $large-1;
           color: #333;
 
+          //Zusammenfassung des Artikels
           p {
             font-size: $medium-1;
             line-height: $medium-3;
             text-align: justify;
           }
 
+          //überschrift des Artikels
           h2 {
             font-size: $medium-3;
           }
         }
 
+        //Möglichkeit, den Artikel weiterzulesen -> Weiterleitung auf andere Website
         .more {
           width: 100%;
           height: $large-2;
@@ -169,6 +190,7 @@ main {
           justify-content: center;
           align-items: center;
 
+          //Link
           a {
             font-size: $medium-1;
             color: #fafafa;
@@ -180,7 +202,9 @@ main {
     }
   }
 
+  //Kontaktformular für Interessenten bzw. Mandanten zur Eingabe von persönlichen Daten, die als E-Mail an die Kanzlei geschickt wird
   .contact {
+    //Hintergrundbild des Kontaktformulars
     .bg-img2 {
       position: absolute;
       z-index: 3;
@@ -188,6 +212,7 @@ main {
       height: 700px;
     }
 
+    //Hauptinhalt des Kontaktformulars
     .contact-inner {
       position: absolute;
       z-index: 4;
@@ -197,10 +222,12 @@ main {
       justify-content: space-between;
       padding: $large-1 80px;
 
+      //Einzeigen des Textes sowie des Formulars nebeneinander
       div {
         width: 50%;
         letter-spacing: 1px;
 
+        //Unterüberschrift "Kontaktformular
         .subtitle {
           color: $tertiary;
           font-size: $medium-1;
@@ -209,6 +236,7 @@ main {
 
         }
 
+        //Überschrift bzw. CTA des Kontaktformulars
         h1 {
           color: $quaternary;
           font-weight: 700;
@@ -216,6 +244,7 @@ main {
           margin-bottom: $medium-2;
         }
 
+        //Beschreibender Text zum Kontaktformular
         p {
           color: $quaternary;
           font-size: $medium-1;
@@ -224,6 +253,7 @@ main {
           font-weight: 300;
         }
 
+        //Abbildung "Bülent Yegen"
         .buelent-yegen {
           width: 55% !important;
           height: 120px;
@@ -235,12 +265,14 @@ main {
           border-radius: 60px;
           margin-top: $large-1;
 
+          //Profilbild "Bülent Yegen"
           img {
             width: auto;
             height: auto;
             margin: 0 $large-1 0 $small-3;
           }
 
+          //Name und Beruf "Bülent Yegen"
           .text {
             width: 80%;
 
@@ -248,24 +280,29 @@ main {
               margin: 0;
             }
 
+            //Name
             .name {
               font-size: $large-1;
               font-weight: 700;
               margin-bottom: $small-3;
             }
 
+            //Beruf
             .job {
               font-size: $medium-1;
             }
           }
         }
 
+        //Eigentliches Kontaktformular zur Eingabe der persönlichen Daten
         form {
+          //Überschriften der Eingabefelder
           p {
             font-size: $medium-1;
             margin-bottom: $small-1;
           }
 
+          //Eingabefelder für die persönlichen Daten des Interessenten bzw. des Mandanten
           input {
             width: 100%;
             height: 56px;
@@ -277,12 +314,9 @@ main {
             font-size: $medium-2;
             letter-spacing: 1px;
           }
-
-          input:focus {
-            border: none;
-          }
         }
 
+        //Datenschutzerklärung bzw. Hinweis für das Kontaktformular
         .contact-privacy {
           width: 100%;
           font-size: 10px;
@@ -291,6 +325,7 @@ main {
           margin-bottom: $medium-2;
         }
 
+        //Absenden-Button
         button {
           width: 180px;
           height: 40px;
@@ -301,6 +336,7 @@ main {
           font-size: $small-3;
         }
 
+        //Animation, wenn über Button gehovert 
         button:hover {
           filter: brightness(0.9);
           transition: 0.3s ease-in;
@@ -308,6 +344,7 @@ main {
         }
       }
 
+      //Breite Formular
       div:last-child {
         width: 40%;
       }
@@ -315,6 +352,8 @@ main {
   }
 }
 
+//Fußzeile mit Links zu den Unterseiten, dem Impressum & Datenschutz sowie den Social-Media-Links
+//Fußzeile ist auf allen Seiten gleich
 footer {
   width: 100%;
   height: 360px;
