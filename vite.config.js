@@ -5,5 +5,8 @@ export default defineConfig({
     assetsInclude: ["./assets/**/*.*"],
     build: {
         emptyOutDir: true, outDir: "../dist"
+    },
+    server: {
+        host: true
     }
 })
