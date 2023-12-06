@@ -1,5 +1,7 @@
 @import 'preset';
 
+//Menüleiste mit Links zu den jeweiligen Unterseiten
+//Menüleiste ist auf allen Seiten gleich
 header {
   width: 100%;
 
@@ -43,12 +45,16 @@ header {
       a {
         color: #fafafa;
         text-decoration: none;
+        letter-spacing: 1px;
       }
     }
   }
 }
 
+//Hauptinhalt der jeweiligen Seiten
 main {
+
+  //Graue Linie zur Trennung der einzelnen Sektionen
   .line {
     width: 100%;
     height: $medium-2;
@@ -57,6 +63,7 @@ main {
     padding: 0;
   }
 
+  //Überschriften für die jeweiligen Sektionen
   h1 {
     font-size: 60px;
     font-weight: 800;
@@ -70,27 +77,109 @@ main {
     }
   }
 
-  .welcome {
+  h3 {
+    font-size: $large-1;
+    color: $tertiary;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: #333;
+    margin-bottom: $medium-2;
+  }
 
-    img {
-      width: 100%;
-      height: 650px;
-      margin: 0;
-      padding: 0;
+  .heading {
+    text-align: center;
+  }
+
+  //Willkommensnachricht + Hintergrundbild
+  .welcome {
+    width: 100%;
+    height: 650px;
+
+    .welcome-inner {
+      position: relative;
+
+      //Hintergrundbild vom Inneren der Kanzlei
+      .bg-img {
+        width: 100%;
+        height: 650px;
+        margin: 0;
+        padding: 0;
+        position: absolute;
+        z-index: 1;
+      }
+
+      article {
+        position: absolute;
+        z-index: 2;
+        width: 60%;
+        height: 650px;
+        background-color: rgba($color: $quaternary, $alpha: 0.8);
+        padding: 80px $large-3 $large-1 $large-3;
+        text-align: center;
+        letter-spacing: 1px;
+        transform:  translateX(-100%);
+        h1 {
+          font-size: 54px;
+        }
+
+        p {
+          font-size: $medium-3;
+        }
+
+        .kontakt {
+          display: flex;
+          justify-content: space-between;
+          position: absolute;
+          width: calc(100% - 2*$large-3);
+          bottom: 10%;
+
+          .telephone, .email{
+            display: flex;
+            justify-content: space-between;
+            width: 45%;
+            height: 80px;
+            text-align: center;
+
+            .text {
+              width: calc(100% - 80px);
+              background-color: #333;
+
+              p {
+                color: $quaternary;
+              }
+            }
+
+            .image {
+              width: 80px;
+              background-color: $secondary;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              
+              img {
+                width: 70%;
+                height: 70%;
+              }
+            }
+          }
+        }
+      }
     }
   }
 
+  //Einleitender Werbetext sowie Informationen zu den Zielen der Kanzlei und der Bedürfnisbefriedigung der Mandanten
   .goals {
     display: flex;
     justify-content: space-between;
     height: 700px;
 
+    //Gesamter angezeigter Text
     article {
       width: 40%;
       padding: $large-2 $large-3;
       letter-spacing: 1px;
       color: $primary;
 
+      //Hauptteil des Textes
       p {
         font-size: $medium-1;
         line-height: 26px;
@@ -98,19 +187,23 @@ main {
       }
     }
 
+    //Neben dem Text angezeigtes Bild zur Veranschaulichung
     img {
       width: 60%;
       object-fit: cover;
     }
   }
 
+  //Aktuelle News zum Wirtschaftsgeschehen oder zur Kanzlei
   .aktuelles {
     padding: $large-2 120px;
 
+    //Darstellung aller Artikel in der Sektion "Aktuelles" nebeneinander
     .aktuelles-inner {
       display: flex;
       justify-content: space-between;
 
+      //Darstellung des Artikels in einer abgetrennten Box
       article {
         width: 30%;
         height: 600px;
@@ -118,6 +211,7 @@ main {
         position: relative;
         letter-spacing: 1px;
 
+        //Kopfzeile des Artikels
         header {
           width: 100%;
           height: 120px;
@@ -127,11 +221,13 @@ main {
           background-color: #333;
           padding: 20px;
 
+          //Stopwatch-Icon
           img {
             height: 90px;
             margin-right: $large-1;
           }
 
+          //"Der schnelle Blick"
           p {
             font-size: 36px;
             line-height: 44px;
@@ -144,21 +240,25 @@ main {
           }
         }
 
+        //Text des Artikel
         .text {
           padding: $small-2 $large-1;
           color: #333;
 
+          //Zusammenfassung des Artikels
           p {
             font-size: $medium-1;
             line-height: $medium-3;
             text-align: justify;
           }
 
+          //überschrift des Artikels
           h2 {
             font-size: $medium-3;
           }
         }
 
+        //Möglichkeit, den Artikel weiterzulesen -> Weiterleitung auf andere Website
         .more {
           width: 100%;
           height: $large-2;
@@ -169,6 +269,7 @@ main {
           justify-content: center;
           align-items: center;
 
+          //Link
           a {
             font-size: $medium-1;
             color: #fafafa;
@@ -180,7 +281,10 @@ main {
     }
   }
 
+  //Kontaktformular für Interessenten bzw. Mandanten zur Eingabe von persönlichen Daten, die als E-Mail an die Kanzlei geschickt wird
   .contact {
+
+    //Hintergrundbild des Kontaktformulars
     .bg-img2 {
       position: absolute;
       z-index: 3;
@@ -188,6 +292,7 @@ main {
       height: 700px;
     }
 
+    //Hauptinhalt des Kontaktformulars
     .contact-inner {
       position: absolute;
       z-index: 4;
@@ -197,10 +302,12 @@ main {
       justify-content: space-between;
       padding: $large-1 80px;
 
+      //Einzeigen des Textes sowie des Formulars nebeneinander
       div {
         width: 50%;
         letter-spacing: 1px;
 
+        //Unterüberschrift "Kontaktformular
         .subtitle {
           color: $tertiary;
           font-size: $medium-1;
@@ -209,6 +316,7 @@ main {
 
         }
 
+        //Überschrift bzw. CTA des Kontaktformulars
         h1 {
           color: $quaternary;
           font-weight: 700;
@@ -216,6 +324,7 @@ main {
           margin-bottom: $medium-2;
         }
 
+        //Beschreibender Text zum Kontaktformular
         p {
           color: $quaternary;
           font-size: $medium-1;
@@ -224,6 +333,7 @@ main {
           font-weight: 300;
         }
 
+        //Abbildung "Bülent Yegen"
         .buelent-yegen {
           width: 55% !important;
           height: 120px;
@@ -235,12 +345,14 @@ main {
           border-radius: 60px;
           margin-top: $large-1;
 
+          //Profilbild "Bülent Yegen"
           img {
             width: auto;
             height: auto;
             margin: 0 $large-1 0 $small-3;
           }
 
+          //Name und Beruf "Bülent Yegen"
           .text {
             width: 80%;
 
@@ -248,24 +360,30 @@ main {
               margin: 0;
             }
 
+            //Name
             .name {
               font-size: $large-1;
               font-weight: 700;
               margin-bottom: $small-3;
             }
 
+            //Beruf
             .job {
               font-size: $medium-1;
             }
           }
         }
 
+        //Eigentliches Kontaktformular zur Eingabe der persönlichen Daten
         form {
+
+          //Überschriften der Eingabefelder
           p {
             font-size: $medium-1;
             margin-bottom: $small-1;
           }
 
+          //Eingabefelder für die persönlichen Daten des Interessenten bzw. des Mandanten
           input {
             width: 100%;
             height: 56px;
@@ -277,12 +395,9 @@ main {
             font-size: $medium-2;
             letter-spacing: 1px;
           }
-
-          input:focus {
-            border: none;
-          }
         }
 
+        //Datenschutzerklärung bzw. Hinweis für das Kontaktformular
         .contact-privacy {
           width: 100%;
           font-size: 10px;
@@ -291,6 +406,7 @@ main {
           margin-bottom: $medium-2;
         }
 
+        //Absenden-Button
         button {
           width: 180px;
           height: 40px;
@@ -301,6 +417,7 @@ main {
           font-size: $small-3;
         }
 
+        //Animation, wenn über Button gehovert 
         button:hover {
           filter: brightness(0.9);
           transition: 0.3s ease-in;
@@ -308,18 +425,301 @@ main {
         }
       }
 
+      //Breite Formular
       div:last-child {
         width: 40%;
       }
     }
   }
+
+  //Bildergallerie mit Bildern von der Kanzlei
+  .gallery {
+    display: grid;
+    grid-template-areas:
+      "a b b c"
+      "d d e c"
+      "f f e g";
+    grid-template-columns: repeat(4, 1fr);
+    padding: 0 10%;
+    margin-bottom: 100px;
+
+    .grid-item {
+      padding: 20px;
+      text-align: center;
+      flex: 1;
+      background-color: $primary;
+      border: 10px solid #fafafa;
+    }
+
+    .square {
+      aspect-ratio: 1 / 1;
+    }
+
+    .horizontal {
+      aspect-ratio: 2 / 1;
+    }
+
+    .vertikal {
+      aspect-ratio: 1 / 2;
+    }
+  }
+
+  //Artikel zur Geschichte der Kanzlei zusammen mit einem "Kontakt aufnehmen"-Button
+  .geschichte {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20%;
+    gap: $large-2;
+
+    article {
+      text-align: justify;
+      letter-spacing: 1px;
+
+      p {
+        font-size: $medium-1;
+        line-height: $medium-3;
+      }
+
+      button {
+        width: 60%;
+        height: $large-2;
+        background-color: $primary;
+        color: $quaternary;
+        font-size: $medium-1;
+        border: none;
+        border-radius: $medium-1;
+        cursor: pointer;
+      }
+    }
+  }
+
+  .referenzen {
+    width: 100%;
+    height: 140px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba($color: $secondary, $alpha: 0.1);
+    padding: 0 15%;
+    margin-top: $large-3;
+    margin-bottom: $large-2;
+  }
+
+  .standort {
+    width: 100%;
+    height: 700px;
+
+    .standort-inner {
+      position: relative;
+
+      .bg-img3 {
+        position: absolute;
+        z-index: 3;
+        width: 100%;
+        height: 700px;
+      }
+
+      .standort-content {
+        position: absolute;
+        z-index: 4;
+        width: 100%;
+        height: 700px;
+        display: flex;
+        justify-content: space-between;
+        padding: $large-1 5%;
+
+        iframe,
+        article {
+          width: 48%;
+          height: 100%;
+          text-align: center;
+          letter-spacing: 1px;
+          color: $quaternary;
+          text-shadow: 2px 2px 8px #333;
+
+          .subtitle {
+            font-size: $medium-3;
+            margin: 0 0 $medium-1;
+            letter-spacing: 2px;
+            color: $quaternary !important;
+          }
+
+          h2 {
+            font-size: 60px;
+            margin: 0;
+            margin-bottom: $large-2;
+            letter-spacing: 2px;
+          }
+
+          table {
+            width: 100%;
+            font-size: $medium-3;
+            font-weight: 300 !important;
+            display: flex;
+            justify-content: center;
+            border-collapse: collapse;
+
+            tbody {
+              text-align: left;
+              width: 85%;
+
+              tr {
+                height: $large-2;
+
+                td:last-child {
+                  padding-left: $medium-3;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .buelent-yegen-vorstellung {
+    position: relative;
+    display: flex;
+    gap: 5%;
+    padding: $large-1;
+    background-color: #fafafa;
+    margin: 0 10%;
+    box-shadow: 0px 0px 12px 8px rgba($color: #333, $alpha: 0.1);
+    letter-spacing: 2px;
+
+    div {
+      width: 30%;
+      text-align: center;
+
+      img {
+        width: 100%;
+      }
+
+      h2 {
+        font-size: $large-1;
+        margin: $small-3 0;
+      }
+
+      .subtitle {
+        font-size: $medium-2;
+      }
+    }
+
+    article {
+      width: 70%;
+
+      p {
+        font-size: $medium-2;
+        line-height: 46px;
+        text-align: justify;
+
+        &:first-child {
+          margin-top: 0;
+        }
+      }
+    }
+
+    .star {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      margin: 0 $large-1 $large-1 0;
+    }
+  }
+
+  .mitarbeiter {
+    width: 100%;
+    height: 400px;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 10%;
+    text-align: center;
+    margin-top: $large-1;
+
+    div {
+      width: 20%;
+      height: 100%;
+      box-shadow: 0px 0px 12px 8px rgba($color: #333, $alpha: 0.1);
+      padding: $medium-2;
+      letter-spacing: 1px;
+
+      img {
+        width: 100%;
+      }
+
+      h2 {
+        font-size: 28px;
+        font-weight: 400;
+        margin: 10px 0;
+      }
+
+      p {
+        font-size: $medium-1;
+        margin: 0;
+      }
+    }
+
+  }
+
+  .leistungen {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 15%;
+    gap: 80px;
+    margin-bottom: 80px;
+
+    article {
+      width: 50%;
+      height: 400px;
+      box-shadow: 0px 0px 12px 8px rgba($color: #333, $alpha: 0.1);
+      text-align: center;
+      padding: $large-3;
+      letter-spacing: 1px;
+
+      img {}
+
+      h2 {
+        font-size: $large-1;
+        font-weight: 500;
+      }
+
+      p {
+        font-size: $medium-1;
+        line-height: $medium-3;
+        text-align: justify;
+      }
+    }
+  }
+
+  .moreLeistungen {
+    display: none;
+  }
+
+  .mehrAnzeigen {
+    text-align: center;
+    margin-bottom: 40px;
+
+    button {
+      margin: 0 auto;
+      cursor: pointer;
+      width: 15%;
+      height: $large-2;
+      background-color: $primary;
+      color: $quaternary;
+      font-size: $medium-1;
+      border: none;
+      border-radius: $medium-1;
+      letter-spacing: 1px;
+    }
+  }
 }
 
+//Fußzeile mit Links zu den Unterseiten, dem Impressum & Datenschutz sowie dem Social-Media
+//Fußzeile ist auf allen Seiten gleich
 footer {
   width: 100%;
   height: 360px;
   background-color: #fff;
-  margin-top: 684px;
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
