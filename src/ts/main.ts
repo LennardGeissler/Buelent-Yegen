@@ -1,7 +1,7 @@
 import './../scss/style.scss'
 
 //Leistungen-Section und dazu gehöriger Button
-const section = document.getElementById("moreLeistungen");
+const section = document.getElementById("moreServices");
 const button = document.getElementById("toggleButton");
 
 //Prüfen, ob Button und Section existieren

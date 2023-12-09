@@ -1,5 +1,6 @@
 @import 'preset';
 
+//Desktop-Website
 @media screen and (min-width: 990px) {
 
   //Menüleiste mit Links zu den jeweiligen Unterseiten
@@ -200,11 +201,11 @@
     }
 
     //Aktuelle News zum Wirtschaftsgeschehen oder zur Kanzlei
-    .aktuelles {
+    .news {
       padding: $large-2 120px;
 
       //Darstellung aller Artikel in der Sektion "Aktuelles" nebeneinander
-      .aktuelles-inner {
+      .news-inner {
         display: flex;
         justify-content: space-between;
 
@@ -470,7 +471,7 @@
     }
 
     //Artikel zur Geschichte der Kanzlei zusammen mit einem "Kontakt aufnehmen"-Button
-    .geschichte {
+    .history {
       display: flex;
       justify-content: space-between;
       padding: 0 20%;
@@ -499,7 +500,7 @@
     }
 
     //Referenzen bzw. Auszeichnungen
-    .referenzen {
+    .references {
       width: 100%;
       height: 140px;
       display: flex;
@@ -512,11 +513,11 @@
     }
 
     //Standort + Öffnungszeiten
-    .standort {
+    .location {
       width: 100%;
       height: 700px;
 
-      .standort-inner {
+      .location-inner {
         position: relative;
 
         //Grauer Hintergrund
@@ -527,7 +528,7 @@
           height: 700px;
         }
 
-        .standort-content {
+        .location-content {
           position: absolute;
           z-index: 4;
           width: 100%;
@@ -587,7 +588,7 @@
     }
 
     //Vorstellung von Bülent Yegen
-    .buelent-yegen-vorstellung {
+    .buelent-yegen-presentation {
       position: relative;
       display: flex;
       gap: 5%;
@@ -638,7 +639,7 @@
     }
 
     //Darstellung von vier Mitarbeitern nebeneinander
-    .mitarbeiter {
+    .workers {
       width: 100%;
       height: 400px;
       display: flex;
@@ -672,7 +673,8 @@
 
     }
 
-    .leistungen {
+    //Auflistung des Leistungsspektrums der Kanzlei
+    .services {
       display: flex;
       justify-content: space-between;
       padding: 0 15%;
@@ -702,11 +704,13 @@
       }
     }
 
-    .moreLeistungen {
+    //Bereich der zunächst verborgenen Leistungen
+    .moreServices {
       display: none;
     }
 
-    .mehrAnzeigen {
+    //Button zur erweiterten Anzeige der Leistungen
+    .readMore {
       text-align: center;
       margin-bottom: 40px;
 
@@ -800,6 +804,8 @@
   }
 }
 
+
+//Smartphone-Website
 @media screen and (max-width: 480px) {
 
   //Menüleiste mit Links zu den jeweiligen Unterseiten
@@ -1018,12 +1024,12 @@
     }
 
     //Aktuelle News zum Wirtschaftsgeschehen oder zur Kanzlei
-    .aktuelles {
+    .news {
       padding: $medium-1;
       width: 300%;
 
       //Darstellung aller Artikel in der Sektion "Aktuelles" nebeneinander
-      .aktuelles-inner {
+      .news-inner {
         display: flex;
         gap: $medium-3;
 
@@ -1110,105 +1116,253 @@
 
     .contact {
       .bg-img2 {
-          position: absolute;
-          z-index: 3;
-          width: 100%;
-          height: 350px;
+        position: absolute;
+        z-index: 3;
+        width: 100%;
+        height: 350px;
       }
 
       .contact-inner {
+        position: absolute;
+        z-index: 4;
+        width: 100%;
+        height: 350px;
+        display: flex;
+        justify-content: space-between;
+        padding: $medium-1;
+
+        div {
+          width: 50%;
+          letter-spacing: 1px;
+
+          .subtitle {
+            color: $tertiary;
+            font-size: 10px;
+            font-weight: 500;
+            margin-bottom: $small-3;
+          }
+
+          h1 {
+            color: $quaternary;
+            font-weight: 600;
+            font-size: 20px;
+            margin-bottom: $small-3;
+          }
+
+          p {
+            color: $quaternary;
+            font-size: $small-2;
+            font-weight: 300;
+            line-height: 12px;
+            text-align: justify;
+          }
+
+          form {
+            p {
+              font-size: $small-2;
+              margin: 2px;
+            }
+
+            input {
+              width: 100%;
+              height: $medium-3;
+              margin-bottom: $small-1;
+              border: none;
+              border-radius: $small-1;
+              color: #333;
+              padding: $small-2;
+              font-size: $medium-1;
+              letter-spacing: 1px;
+            }
+
+            input:focus {
+              border: none;
+            }
+          }
+
+          .contact-privacy {
+            width: 100%;
+            font-size: 3px;
+            line-height: 5px;
+            text-align: justify;
+            margin-bottom: $small-3;
+          }
+
+          button {
+            width: 95%;
+            height: $medium-3;
+            border-radius: $medium-3;
+            border: none;
+            background-color: $tertiary;
+            color: $quaternary;
+            font-size: $small-2;
+            letter-spacing: 1px;
+          }
+
+          button:hover {
+            filter: brightness(0.9);
+            transition: 0.3s ease-in;
+            cursor: pointer;
+          }
+        }
+
+        div:last-child {
+          width: 40%;
+        }
+
+        .buelent-yegen {
+          display: none;
+        }
+      }
+    }
+
+    //Bildergallerie mit Bildern von der Kanzlei
+    .gallery {
+      display: block;
+      padding: 0 8%;
+      margin-bottom: $large-2;
+
+      .grid-item {
+        padding: 20px;
+        text-align: center;
+        flex: 1;
+        background-color: $primary;
+        border: 8px solid #fafafa;
+      }
+
+      .square {
+        aspect-ratio: 1 / 1;
+      }
+
+      .horizontal {
+        aspect-ratio: 2 / 1;
+      }
+
+      .vertikal {
+        aspect-ratio: 1 / 2;
+      }
+    }
+
+    //Artikel zur Geschichte der Kanzlei zusammen mit einem "Kontakt aufnehmen"-Button
+    .history {
+      display: block;
+      justify-content: space-between;
+      padding: 0 $medium-2;
+
+      article {
+        text-align: justify;
+        letter-spacing: 1px;
+
+        p {
+          font-size: 12px;
+          line-height: $medium-2;
+        }
+
+        button {
+          width: 100%;
+          height:  40px;
+          background-color: $primary;
+          color: $quaternary;
+          font-size: $medium-1;
+          border: none;
+          border-radius: $small-2;
+          cursor: pointer;
+        }
+      }
+    }
+
+    //Referenzen bzw. Auszeichnungen
+    .references {
+      width: 100%;
+      height: auto;
+      background-color: rgba($color: $secondary, $alpha: 0.1);
+      padding: 5%;
+      margin-top: $large-3;
+      margin-bottom: $large-2;
+      text-align: center;
+
+      img {
+        height: 80px;
+      }
+    }
+
+    //Standort + Öffnungszeiten
+    .location {
+      width: 100%;
+      height: 820px;
+
+      .location-inner {
+        position: relative;
+
+        //Grauer Hintergrund
+        .bg-img3 {
+          position: absolute;
+          z-index: 3;
+          width: 100%;
+          height: 820px;
+        }
+
+        .location-content {
           position: absolute;
           z-index: 4;
           width: 100%;
-          height: 350px;
-          display: flex;
-          justify-content: space-between;
+          height: 820px;
+          display: block;
           padding: $medium-1;
 
-          div {
-              width: 50%;
-              letter-spacing: 1px;
-
-              .subtitle {
-                  color: $tertiary;
-                  font-size: 10px;
-                  font-weight: 500;
-                  margin-bottom: $small-3;
-              }
-
-              h1 {
-                  color: $quaternary;
-                  font-weight: 600;
-                  font-size: 20px;
-                  margin-bottom: $small-3;
-              }
-
-              p {
-                  color: $quaternary;
-                  font-size: $small-2;
-                  font-weight: 300;
-                  line-height: 12px;
-                  text-align: justify;
-              }
-
-              form {
-                  p {
-                      font-size: $small-2;
-                      margin: 2px;
-                  }
-
-                  input {
-                      width: 100%;
-                      height: $medium-3;
-                      margin-bottom: $small-1;
-                      border: none;
-                      border-radius: $small-1;
-                      color: #333;
-                      padding: $small-2;
-                      font-size: $medium-1;
-                      letter-spacing: 1px;
-                  }
-
-                  input:focus {
-                      border: none;
-                  }
-              }
-
-              .contact-privacy {
-                  width: 100%;
-                  font-size: 3px;
-                  line-height: 5px;
-                  text-align: justify;
-                  margin-bottom: $small-3;
-              }
-
-              button {
-                  width: 95%;
-                  height: $medium-3;
-                  border-radius: $medium-3;
-                  border: none;
-                  background-color: $tertiary;
-                  color: $quaternary;
-                  font-size: $small-2;
-                  letter-spacing: 1px;
-              }
-
-              button:hover {
-                  filter: brightness(0.9);
-                  transition: 0.3s ease-in;
-                  cursor: pointer;
-              }
+          iframe {
+            height: 350px;
+            margin-bottom: 20px;
           }
 
-          div:last-child {
-              width: 40%;
-          }
+          iframe,
+          article {
+            width: 100%;
+            text-align: center;
+            letter-spacing: 1px;
+            color: $quaternary;
+            text-shadow: 2px 2px 8px #333;
 
-          .buelent-yegen {
-            display: none;
+            .subtitle {
+              font-size: $medium-1;
+              margin: 0 0 $medium-1;
+              letter-spacing: 2px;
+              color: $quaternary !important;
+            }
+
+            h2 {
+              font-size: 28px;
+              margin: 0;
+              margin-bottom: $large-2;
+              letter-spacing: 2px;
+            }
+
+            //Kontakt + Öffnungszeiten
+            table {
+              width: 100%;
+              font-size: $medium-1;
+              font-weight: 300 !important;
+              display: flex;
+              justify-content: center;
+              border-collapse: collapse;
+
+              tbody {
+                text-align: left;
+                width: 95%;
+
+                tr {
+                  height: 40px;
+
+                  td:last-child {
+                    padding-left: $medium-3;
+                  }
+                }
+              }
+            }
           }
+        }
       }
-  }
+    }
   }
 
   footer {
@@ -1221,70 +1375,70 @@
     padding: $medium-3;
 
     div {
+      width: 100%;
+      margin-bottom: $large-1;
+
+      img {
+        width: 60%;
+        margin-bottom: $small-3;
+      }
+
+      p {
+        font-size: 12px;
+      }
+
+      .nav-light {
+        ul {
+          padding-inline-start: 0;
+
+          li {
+            list-style: none;
+            height: $medium-3;
+
+            a {
+              text-decoration: none;
+              color: #333;
+              font-size: 8px;
+              letter-spacing: 2px;
+            }
+          }
+
+        }
+      }
+
+      .nav-bold {
+        ul {
+          padding-inline-start: 0;
+
+          li {
+            list-style: none;
+            height: $large-1;
+
+            a {
+              text-decoration: none;
+              color: #333;
+              font-size: 12px;
+              font-weight: 400;
+              letter-spacing: 2px;
+            }
+          }
+
+        }
+      }
+
+      .social-media {
+        padding: 0 $large-2;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
         width: 100%;
-        margin-bottom: $large-1;
+        margin-top: $medium-1;
 
         img {
-            width: 60%;
-            margin-bottom: $small-3;
+          width: $large-1;
+          height: $large-1;
         }
-
-        p {
-            font-size: 12px;
-        }
-
-        .nav-light {
-            ul {
-                padding-inline-start: 0;
-
-                li {
-                    list-style: none;
-                    height: $medium-3;
-
-                    a {
-                        text-decoration: none;
-                        color: #333;
-                        font-size: 8px;
-                        letter-spacing: 2px;
-                    }
-                }
-
-            }
-        }
-
-        .nav-bold {
-            ul {
-                padding-inline-start: 0;
-
-                li {
-                    list-style: none;
-                    height: $large-1;
-
-                    a {
-                        text-decoration: none;
-                        color: #333;
-                        font-size: 12px;
-                        font-weight: 400;
-                        letter-spacing: 2px;
-                    }
-                }
-
-            }
-        }
-
-        .social-media {
-            padding: 0 $large-2;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            width: 100%;
-            margin-top: $medium-1;
-
-            img {
-                width: $large-1;
-                height: $large-1;
-            }
-        }
+      }
     }
-}
+  }
 }
