@@ -5,10 +5,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Leistungsspektrum</title>
-    <script type="module" src="./ts/main.ts"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
 </head>
 
 <body>
+    <script type="module" src="./ts/main.ts"></script>
 
     <header>
         <div>
@@ -28,7 +34,7 @@
 
     <main>
         <section class="welcome">
-            <img src="assets/home-img.png" alt="">
+            <img class="bg-img" src="assets/home-img.png" alt="">
         </section>
 
         <div class="line"></div>
@@ -38,7 +44,7 @@
             <h1>Unsere Leistungen</h1>
         </div>
 
-        <section class="leistungen">
+        <section class="services">
             <article>
                 <img src="assets/document-icon.png" alt="">
                 <h2>Jahresabschluss</h2>
@@ -54,7 +60,7 @@
                     Buchführung, Erstellung von Jahresabschlüssen und Finanzberichten.</p>
             </article>
         </section>
-        <section class="leistungen">
+        <section class="services">
             <article>
                 <img src="assets/calculator-icon.png" alt="">
                 <h2>Lohnbuchhaltung</h2>
@@ -71,12 +77,12 @@
             </article>
         </section>
 
-        <section class="mehrAnzeigen">
-            <button id="toggleButton" (click)="toggleLeistungen()">Mehr anzeigen</button>
+        <section class="readMore">
+            <button id="toggleButton">Mehr anzeigen</button>
         </section>
 
-        <div class="moreLeistungen" id="moreLeistungen">
-            <section class="leistungen">
+        <div class="moreServices" id="moreServices">
+            <section class="services">
                 <article>
                     <img src="assets/conversation-icon.png" alt="">
                     <h2>Steuerberatung</h2>
@@ -92,7 +98,7 @@
                         Deklaration von Einkommen, Abzügen und Steuern für Privatpersonen.</p>
                 </article>
             </section>
-            <section class="leistungen">
+            <section class="services">
                 <article>
                     <img src="assets/business-icon.png" alt="">
                     <h2>Unternehmens-nachfolgeberatung</h2>
@@ -108,7 +114,7 @@
                         Vermögensübertragungen unter Berücksichtigung steuerlicher Auswirkungen zu gestalten.</p>
                 </article>
             </section>
-            <section class="leistungen">
+            <section class="services">
                 <article>
                     <img src="assets/agriculture-icon.png" alt="">
                     <h2>Landwirtschaftliche Buchstelle</h2>
@@ -124,7 +130,7 @@
                         Investitionsplanung und operativen Entscheidungen für Unternehmen.</p>
                 </article>
             </section>
-            <section class="leistungen">
+            <section class="services">
                 <article>
                     <img src="assets/progress-icon.png" alt="">
                     <h2>Existenzgründungs-<br>beratung</h2>
