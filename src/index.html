@@ -94,7 +94,7 @@
     <section class="news">
       <h1>Aktuelles</h1>
       <div class="news-inner">
-        <article>
+        <article class="slide fade">
           <header>
             <img src="assets/stopwatch-icon.png" alt="">
             <p>Der <span>schnelle <br>Blick.</span></p>
@@ -112,8 +112,7 @@
             <a href="">Weiterlesen</a>
           </div>
         </article>
-
-        <article>
+        <article class="slide fade">
           <header>
             <img src="assets/stopwatch-icon.png" alt="">
             <p>Der <span>schnelle <br>Blick.</span></p>
@@ -131,7 +130,7 @@
             <a href="">Weiterlesen</a>
           </div>
         </article>
-        <article>
+        <article class="slide fade">
           <header>
             <img src="assets/stopwatch-icon.png" alt="">
             <p>Der <span>schnelle <br>Blick.</span></p>
@@ -150,7 +149,16 @@
           </div>
         </article>
       </div>
+
     </section>
+
+    <nav>
+      <button id="btnLeft" onclick="plusSlides(-1)"><img src="assets/arrow-left.png" alt="Left Icon"></button>
+      <div>
+        <p id="slideNumber"></p>
+      </div>
+      <button id="btnRight" onclick="plusSlides(1)"><img src="assets/arrow-right.png" alt="Right Icon"></button>
+    </nav>
 
     <section class="contact">
       <img class="bg-img2" src="assets/contact-img.png" alt="Background Image">
@@ -200,7 +208,7 @@
     </section>
   </main>
 
-  <footer style="margin-top: 684px;">
+  <footer class="footer-home">
     <div>
       <img src="assets/logo.jpg" alt="Logo">
       <p>© 2023 Bülent Yegen</p>
@@ -233,6 +241,40 @@
       </div>
     </div>
   </footer>
+
+  <script>
+    let btnLeft = document.getElementById('btnLeft');
+    let btnRight = document.getElementById('btnRight');
+
+    let slideIndex = 1;
+
+    const plusSlides = (n) => {
+      showSlides(slideIndex += n);
+    }
+
+    const currentSlide = (n) => {
+      showSlides(slideIndex = n);
+    }
+
+    const showSlides = (n) => {
+      let i;
+      let slides = document.getElementsByClassName('slide');
+      let slideNumber = document.getElementById('slideNumber');
+      if (n > 3) { slideIndex = 1 }
+      if (n < 1) { slideIndex = 3 }
+      for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+      }
+      slides[slideIndex - 1].style.display = "block";
+      if (n == 4) { n = 1; }
+      if (n == 0) { n = 3; }
+      slideNumber.innerHTML = n + " / 3";
+    }
+    showSlides(slideIndex);
+    
+    btnLeft.addEventListener('click', plusSlides(-1));
+    btnRight.addEventListener('click', plusSlides(1));
+  </script>
 </body>
 
 </html>
