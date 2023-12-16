@@ -2,9 +2,9 @@ import { defineConfig } from "vite";
 
 export default defineConfig({
     root: "src",
-    assetsInclude: ["./**/*.*"],
+    assetsInclude: ["./assets/**/*.*"],
     build: {
-        emptyOutDir: true, 
+        emptyOutDir: true,
         outDir: "../dist"
     },
     server: {
