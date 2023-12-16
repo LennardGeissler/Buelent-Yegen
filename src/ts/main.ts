@@ -1,5 +1,11 @@
 import './../scss/style.scss'
 
+//Button zum öffnen der Kontakt-Seite
+const cmdContact = document.getElementById('cmdContact');
+cmdContact?.addEventListener('click', function openContactPage() {window.location.href = 'kontakt.html'});
+
+//---------------//
+
 //Leistungen-Section und dazu gehöriger Button
 const section = document.getElementById("moreServices");
 const button = document.getElementById("toggleButton");
@@ -11,6 +17,8 @@ if (button && section) {
     section.style.display === 'block' ? button.style.display = 'none' : 'block'; //Verbergen des Buttons
   });
 }
+
+//---------------//
 
 //Welcome-Section und dessen oberster Punkt
 const welcome = document.getElementById("welcome");

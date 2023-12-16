@@ -3,7 +3,6 @@
 
 <head>
   <meta charset="UTF-8" />
-  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Bülent Yegen</title>
 
@@ -19,8 +18,8 @@
 
   <header>
     <div>
-      <img src="./assets/logo.jpg" alt="">
-      <button>Kontakt</button>
+      <a href="index.html"><img src="./assets/logo.jpg" alt=""></a>
+      <button id="cmdContact">Kontakt</button>
     </div>
     <nav>
       <ul>
@@ -271,7 +270,7 @@
       slideNumber.innerHTML = n + " / 3";
     }
     showSlides(slideIndex);
-    
+
     btnLeft.addEventListener('click', plusSlides(-1));
     btnRight.addEventListener('click', plusSlides(1));
   </script>
